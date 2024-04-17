@@ -1,7 +1,19 @@
 local servers = {
   -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
   ruff_lsp = {},
-  jedi_language_server = { diagnostics = { enabled = true } },
+  pyright = {
+    settings = {
+      pyright = { autoImportCompletion = true },
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = 'openFilesOnly',
+          useLibraryCodeForTypes = true,
+          typeCheckingMode = 'off',
+        },
+      },
+    },
+  },
 
   volar = {
     filetypes = { 'vue' },
