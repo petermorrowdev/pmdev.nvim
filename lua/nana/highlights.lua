@@ -157,4 +157,5 @@ return {
   ['@type.qualifier'] = { fg = palette.crimson },
   ['@variable'] = { fg = palette.white },
   ['@variable.builtin'] = { fg = palette.orange },
+  ['@variable.parameter'] = { fg = palette.orange },
 }
