@@ -67,7 +67,7 @@ return {
           '--column',
           '--smart-case',
         },
-        file_ignore_patterns = { '^.git/' },
+        file_ignore_patterns = { '^.git/', '^.venv/', '__pycache__' },
         mappings = {
           i = {
             ['<C-u>'] = false,
