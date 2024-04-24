@@ -103,6 +103,9 @@ return {
   LuaLineDiffChange = { fg = palette.orange },
   LuaLineDiffDelete = { fg = palette.red },
 
+  -- todo-comments
+  TodoFgTODO = { fg = palette.base6 },
+
   -- Treesitter
   ['@annotation'] = { fg = palette.lavender },
   ['@attribute'] = { fg = palette.green },
