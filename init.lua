@@ -74,7 +74,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Make line numbers default
 vim.wo.number = true
-vim.wo.colorcolumn = '79,88'
+vim.wo.colorcolumn = '80,88,120'
 vim.wo.relativenumber = true
 
 -- Diagnostic keymaps
