@@ -5,7 +5,11 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
+
+-- Disable python vim plugins (default setup slows down python file startup ~8 seconds)
+vim.g.loaded_python_provider = 0
+vim.g.loaded_python3_provider = 0
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
