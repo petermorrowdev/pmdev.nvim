@@ -135,7 +135,7 @@ return {
   ['@keyword.function'] = { fg = palette.blue },
   ['@keyword.operator'] = { fg = palette.crimson },
   ['@keyword.return'] = { fg = palette.crimson },
-  ['@label'] = { fg = palette.crimson },
+  ['@label'] = { fg = palette.base8 },
   ['@markup.heading'] = { fg = palette.base8, bold = true },
   ['@markup.italic'] = { fg = palette.base8, italic = true },
   ['@markup.strong'] = { fg = palette.base8, bold = true },
