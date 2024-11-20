@@ -116,7 +116,7 @@ return {
   ['@conceal'] = { fg = palette.grey },
   ['@conditional'] = { fg = palette.crimson },
   ['@conditional.ternary'] = { fg = palette.crimson },
-  ['@constant'] = { fg = palette.lavender },
+  ['@constant'] = { fg = palette.white },
   ['@constant.builtin'] = { fg = palette.lavender },
   ['@constant.macro'] = { fg = palette.lavender },
   ['@constructor'] = { fg = palette.green },
