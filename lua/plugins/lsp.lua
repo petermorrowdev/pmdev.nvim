@@ -39,6 +39,8 @@ local servers = {
   },
 
   ['terraform-ls'] = {},
+
+  ['yaml-language-server'] = {},
 }
 
 return { -- LSP Configuration & Plugins
@@ -178,21 +180,18 @@ return { -- LSP Configuration & Plugins
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       },
     }
-    
+
     local mason_registry = require 'mason-registry'
     local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
 
     local lspconfig = require 'lspconfig'
 
-    lspconfig.tsserver.setup {
+    lspconfig.ts_ls.setup {
       init_options = {
         plugins = {
           {
@@ -204,6 +203,5 @@ return { -- LSP Configuration & Plugins
       },
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact' },
     }
-
   end,
 }
