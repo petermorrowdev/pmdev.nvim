@@ -59,6 +59,9 @@ return {
   Visual = { bg = palette.basehighlight },
   VisualNOS = { bg = palette.base3 },
   Whitespace = { fg = palette.base2 },
+  LazySpecial = { fg = palette.blue },
+  LazyReasonRequire = { fg = palette.base6, bold = true },
+  LazyReasonPlugin = { fg = palette.base5 },
 
   -- Diagnostics
   dbui_tables = { fg = palette.white },
