@@ -1,12 +1,42 @@
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+  },
   opts = {
-    ensure_installed = { 'bash', 'c', 'dockerfile', 'html', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'json', 'python', 'toml', 'sql', 'hcl' },
+    ensure_installed = {
+      'bash',
+      'c',
+      'dockerfile',
+      'hcl',
+      'html',
+      'json',
+      'lua',
+      'markdown',
+      'markdown_inline',
+      'python',
+      'sql',
+      'toml',
+      'vim',
+      'vimdoc',
+    },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = { enable = true },
-    indent = { enable = true },
+    indent = { enable = false },
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+        keymaps = {
+          ['af'] = '@function.outer',
+          ['if'] = '@function.inner',
+          ['ac'] = '@class.outer',
+          ['ic'] = '@class.inner',
+        },
+      },
+    },
   },
   config = function(_, opts)
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

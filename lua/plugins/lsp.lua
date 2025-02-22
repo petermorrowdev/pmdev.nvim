@@ -1,5 +1,5 @@
 local servers = {
-  -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
+  -- python
   ruff = {},
   pyright = {
     settings = {
@@ -15,6 +15,8 @@ local servers = {
     },
   },
 
+  -- ts/js
+  eslint = {},
   volar = {
     filetypes = { 'vue' },
     init_options = {
@@ -24,6 +26,7 @@ local servers = {
     },
   },
 
+  -- nvim
   lua_ls = {
     -- cmd = {...},
     -- filetypes { ...},
@@ -38,8 +41,8 @@ local servers = {
     },
   },
 
+  -- infra
   ['terraform-ls'] = {},
-
   ['yaml-language-server'] = {},
 }
 
