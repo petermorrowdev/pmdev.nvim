@@ -21,7 +21,7 @@ return {
   Directory = { fg = palette.blue },
   ErrorMsg = { fg = palette.red, bg = palette.basewarn },
   FloatBorder = { bg = palette.base2 },
-  Float = { fg = palette.orange },
+  Float = { fg = palette.lavender },
   FloatTitle = { fg = palette.base7 },
   Identifier = { fg = palette.white },
   IncSearch = { bg = palette.basehighlight },
