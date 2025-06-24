@@ -1,17 +1,20 @@
-local colors = require 'nana.palette'
+local palettes = require 'nana.palette'
+
+local current_background = vim.o.background or 'dark'
+local colors = (current_background == 'light') and palettes.light or palettes.dark
 
 return {
   inactive = {
-    a = { fg = colors.gray, bg = colors.base1 },
-    b = { fg = colors.gray, bg = colors.base1 },
-    c = { fg = colors.gray, bg = nil }, -- transparent
-  },
-  normal = {
-    a = { fg = colors.grey, bg = colors.basehighlight },
-    b = { fg = colors.grey, bg = colors.base2 },
+    a = { fg = colors.grey, bg = colors.base1 },
+    b = { fg = colors.grey, bg = colors.base1 },
     c = { fg = colors.grey, bg = nil }, -- transparent
   },
-  visual = { a = { fg = colors.black, bg = colors.yellow } },
+  normal = {
+    a = { fg = colors.grey, bg = nil },
+    b = { fg = colors.grey, bg = colors.base1 },
+    c = { fg = colors.grey, bg = nil }, -- transparent
+  },
+  visual = { a = { fg = colors.black, bg = (current_background == 'light') and colors.lavender or colors.yellow } },
   replace = { a = { fg = colors.black, bg = colors.red, gui = 'bold' } },
   insert = { a = { fg = colors.black, bg = colors.green } },
   command = { a = { fg = colors.black, bg = colors.orange } },

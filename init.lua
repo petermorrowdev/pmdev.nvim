@@ -7,6 +7,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
+-- Ensure termguicolors is set early for true color support
+vim.o.termguicolors = true
+
 -- Disable python vim plugins (default setup slows down python file startup ~8 seconds)
 vim.g.loaded_python_provider = 0
 vim.g.loaded_python3_provider = 0
