@@ -14,7 +14,10 @@ return {
     b = { fg = colors.grey, bg = colors.base1 },
     c = { fg = colors.grey, bg = nil }, -- transparent
   },
-  visual = { a = { fg = colors.black, bg = (current_background == 'light') and colors.lavender or colors.yellow } },
+  visual = { a = {
+    fg = colors.black,
+    bg = colors.yellow,
+  } },
   replace = { a = { fg = colors.black, bg = colors.red, gui = 'bold' } },
   insert = { a = { fg = colors.black, bg = colors.green } },
   command = { a = { fg = colors.black, bg = colors.orange } },
