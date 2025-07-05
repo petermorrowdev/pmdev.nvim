@@ -1,6 +1,5 @@
 local servers = {
   -- python
-  ruff = {},
   pyright = {
     settings = {
       pyright = { autoImportCompletion = true },
@@ -14,13 +13,13 @@ local servers = {
       },
     },
   },
+  ruff = {},
 
-  -- tailwind
-  tailwindcss = {},
-
-  -- ts/js
+  -- web
   eslint = {},
+  tailwindcss = {},
   ts_ls = {},
+  cssls = {},
 
   -- nvim
   lua_ls = {
@@ -92,16 +91,17 @@ return {
 
     require('mason-tool-installer').setup {
       ensure_installed = {
-        'stylua',
+        'css-lsp',
+        'eslint-lsp',
         'lua-language-server',
         'pyright',
         'ruff',
-        'eslint-lsp',
-        'typescript-language-server',
+        'stylua',
         'tailwindcss-language-server',
         'terraform-ls',
-        'yaml-language-server',
+        'typescript-language-server',
         'vue-language-server',
+        'yaml-language-server',
       },
     }
 
