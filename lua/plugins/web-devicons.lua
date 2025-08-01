@@ -1,6 +1,6 @@
 return {
   'nvim-tree/nvim-web-devicons',
-  enabled = true,
+  enabled = vim.g.have_nerd_font,
   opts = {
     default = true,
   },
