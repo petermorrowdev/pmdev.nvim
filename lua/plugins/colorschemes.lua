@@ -1,6 +1,6 @@
 return {
   {
-    dir = 'lua/nana/',
+    dir = '~/.config/nvim/lua/nana/',
     name = 'nana',
     priority = 100,
     config = function()
