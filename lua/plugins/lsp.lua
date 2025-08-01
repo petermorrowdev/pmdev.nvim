@@ -1,3 +1,17 @@
+local ensure_installed = {
+  'css-lsp',
+  'eslint-lsp',
+  'lua-language-server',
+  'pyright',
+  'ruff',
+  'stylua',
+  'tailwindcss-language-server',
+  'terraform-ls',
+  'typescript-language-server',
+  'vue-language-server',
+  'yaml-language-server',
+}
+
 local servers = {
   -- python
   pyright = {
@@ -18,7 +32,17 @@ local servers = {
   -- web
   eslint = {},
   tailwindcss = {},
-  ts_ls = {},
+  ts_ls = {
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  },
+  volar = {
+    filetypes = { 'vue' },
+    init_options = {
+      vue = {
+        hybridMode = false,
+      },
+    },
+  },
   cssls = {},
 
   -- nvim
@@ -90,19 +114,7 @@ return {
     }
 
     require('mason-tool-installer').setup {
-      ensure_installed = {
-        'css-lsp',
-        'eslint-lsp',
-        'lua-language-server',
-        'pyright',
-        'ruff',
-        'stylua',
-        'tailwindcss-language-server',
-        'terraform-ls',
-        'typescript-language-server',
-        'vue-language-server',
-        'yaml-language-server',
-      },
+      ensure_installed = ensure_installed,
     }
 
     -- Configure vue and typescript servers manually
@@ -112,20 +124,5 @@ return {
       config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
       lspconfig[server_name].setup(config)
     end
-
-    lspconfig.ts_ls.setup {
-      capabilities = capabilities,
-      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-    }
-
-    lspconfig.volar.setup {
-      capabilities = capabilities,
-      filetypes = { 'vue' },
-      init_options = {
-        vue = {
-          hybridMode = false,
-        },
-      },
-    }
   end,
 }
