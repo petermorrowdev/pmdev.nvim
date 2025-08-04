@@ -7,7 +7,6 @@ return {
       css = {
         -- CSS icon is broken, showing 歓 not sure why
         icon = '',
-        color = '#3ca5d6',
         name = 'Css',
       },
     },
