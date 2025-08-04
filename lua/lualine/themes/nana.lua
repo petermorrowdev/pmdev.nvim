@@ -7,12 +7,12 @@ return {
   inactive = {
     a = { fg = colors.grey, bg = colors.base1 },
     b = { fg = colors.grey, bg = colors.base1 },
-    c = { fg = colors.grey, bg = nil }, -- transparent
+    c = { fg = colors.grey, bg = colors.base1 },
   },
   normal = {
-    a = { fg = colors.grey, bg = nil },
+    a = { fg = colors.grey, bg = colors.base1 },
     b = { fg = colors.grey, bg = colors.base1 },
-    c = { fg = colors.grey, bg = nil }, -- transparent
+    c = { fg = colors.grey, bg = colors.base1 },
   },
   visual = { a = {
     fg = colors.black,
