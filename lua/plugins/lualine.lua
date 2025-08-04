@@ -4,9 +4,9 @@ return {
   -- See `:help lualine.txt`
   opts = {
     options = {
-      icons_enabled = true,
+      icons_enabled = vim.g.have_nerd_font,
       theme = 'nana',
-      component_separators = '|',
+      component_separators = '',
       section_separators = '',
     },
   },
