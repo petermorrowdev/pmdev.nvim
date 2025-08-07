@@ -31,7 +31,17 @@ local servers = {
 
   -- web
   eslint = {},
-  tailwindcss = {},
+  tailwindcss = {
+    settings = {
+      tailwindCSS = {
+        experimental = {
+          classRegex = {
+            { 'clsx\\(([^)]*)\\)', "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+          },
+        },
+      },
+    },
+  },
   ts_ls = {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
   },
