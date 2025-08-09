@@ -119,6 +119,18 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Copy file paths
+vim.keymap.set('n', '<leader>cp', function()
+  local relative_path = vim.fn.fnamemodify(vim.fn.expand '%:p', ':.')
+  vim.fn.setreg('+', relative_path)
+  print('Copied: ' .. relative_path)
+end, { desc = 'Copy relative path to clipboard' })
+vim.keymap.set('n', '<leader>cf', function()
+  local filename = vim.fn.expand '%:t'
+  vim.fn.setreg('+', filename)
+  print('Copied filename: ' .. filename)
+end, { desc = 'Copy filename to clipboard' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
