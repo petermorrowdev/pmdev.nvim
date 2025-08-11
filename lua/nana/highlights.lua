@@ -88,6 +88,7 @@ return function(palette)
     NvimTreeFolderName = { fg = palette.white },
     NvimTreeRootFolder = { fg = palette.crimson },
     NvimTreeSpecialFile = { fg = palette.white, style = 'NONE' },
+    NvimTreeWinSeparator = { fg = palette.base3, bg = nil },
 
     -- Telescope
     TelescopeBorder = { fg = palette.base4 },
