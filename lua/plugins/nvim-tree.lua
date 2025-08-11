@@ -8,29 +8,35 @@ return {
     },
     config = function()
       require('nvim-tree').setup {
-        sort_by = "case_sensitive",
+        sort_by = 'case_sensitive',
+        sync_root_with_cwd = true,
+        respect_buf_cwd = true,
         view = {
           width = 30,
         },
         renderer = {
           group_empty = true,
           icons = {
-            git_placement = "before",
+            git_placement = 'before',
             glyphs = {
               git = {
-                unstaged = "●",
-                staged = "✓",
-                unmerged = "◐",
-                renamed = "→",
-                untracked = "◯",
-                deleted = "✖",
-                ignored = "◌",
+                unstaged = '●',
+                staged = '✓',
+                unmerged = '◐',
+                renamed = '→',
+                untracked = '◯',
+                deleted = '✖',
+                ignored = '◌',
               },
             },
           },
         },
         filters = {
           dotfiles = false,
+        },
+        update_focused_file = {
+          enable = true,
+          update_cwd = true,
         },
       }
     end,
@@ -42,7 +48,7 @@ return {
       'nvim-tree/nvim-tree.lua',
     },
     config = function()
-      require("lsp-file-operations").setup()
+      require('lsp-file-operations').setup()
     end,
-  }
+  },
 }

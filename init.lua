@@ -131,6 +131,9 @@ vim.keymap.set('n', '<leader>cf', function()
   print('Copied filename: ' .. filename)
 end, { desc = 'Copy filename to clipboard' })
 
+-- Directory navigation
+vim.keymap.set('n', '<leader>cu', '<cmd>cd ..<cr><cmd>pwd<cr>', { desc = 'Change directory up one level' })
+
 -- NvimTree keymaps
 vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<CR>', { desc = 'Find file in NvimTree' })
