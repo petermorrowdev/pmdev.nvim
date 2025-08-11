@@ -131,6 +131,11 @@ vim.keymap.set('n', '<leader>cf', function()
   print('Copied filename: ' .. filename)
 end, { desc = 'Copy filename to clipboard' })
 
+-- NvimTree keymaps
+vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
+vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<CR>', { desc = 'Find file in NvimTree' })
+vim.keymap.set('n', '<leader>tc', ':NvimTreeClose<CR>', { desc = 'Close NvimTree' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

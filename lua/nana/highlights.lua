@@ -103,6 +103,15 @@ return function(palette)
     diffRemoved = { fg = palette.diff_remove },
     GitSignsCurrentLineBlame = { fg = palette.basehighlight },
 
+    -- nvim-tree git status colors
+    NvimTreeGitDirtyIcon = { fg = palette.orange },
+    NvimTreeGitStagedIcon = { fg = palette.green },
+    NvimTreeGitMergeIcon = { fg = palette.red },
+    NvimTreeGitRenamedIcon = { fg = palette.blue },
+    NvimTreeGitNewIcon = { fg = palette.yellow },
+    NvimTreeGitDeletedIcon = { fg = palette.red },
+    NvimTreeGitIgnoredIcon = { fg = palette.grey },
+
     -- lualine
     LuaLineDiffAdd = { fg = palette.green },
     LuaLineDiffChange = { fg = palette.orange },
