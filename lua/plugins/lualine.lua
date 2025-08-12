@@ -5,7 +5,7 @@ return {
   opts = {
     options = {
       icons_enabled = vim.g.have_nerd_font,
-      theme = 'nana',
+      theme = 'greenight',
       component_separators = '',
       section_separators = '',
     },

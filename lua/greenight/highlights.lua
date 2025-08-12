@@ -1,4 +1,4 @@
--- lua/nana/highlights.lua
+-- lua/greenight/highlights.lua
 
 -- This now returns a function that takes a palette
 return function(palette)
@@ -67,8 +67,8 @@ return function(palette)
 
     -- Diagnostics
     dbui_tables = { fg = palette.white },
-    CursorWord0 = { bg = palette.basehighlight, fg = palette.white }, -- Adjusted for light mode
-    CursorWord1 = { bg = palette.basehighlight, fg = palette.white }, -- Adjusted for light mode
+    CursorWord0 = { bg = palette.basehighlight, fg = palette.white },
+    CursorWord1 = { bg = palette.basehighlight, fg = palette.white },
     DiagnosticError = { fg = palette.red },
     DiagnosticWarn = { fg = palette.orange },
     DiagnosticSignError = { fg = palette.red },
@@ -85,10 +85,6 @@ return function(palette)
     DiagnosticUnderlineWarn = { undercurl = true, sp = palette.orange },
     DiagnosticFloatingError = { fg = palette.red },
     DiagnosticFloatingHint = { fg = palette.blue, bg = palette.base3 },
-    NvimTreeFolderName = { fg = palette.white },
-    NvimTreeRootFolder = { fg = palette.crimson },
-    NvimTreeSpecialFile = { fg = palette.white, style = 'NONE' },
-    NvimTreeWinSeparator = { fg = palette.base3, bg = nil },
 
     -- Telescope
     TelescopeBorder = { fg = palette.base4 },
@@ -103,6 +99,12 @@ return function(palette)
     diffAdded = { fg = palette.green },
     diffRemoved = { fg = palette.diff_remove },
     GitSignsCurrentLineBlame = { fg = palette.basehighlight },
+
+    -- nvim-tree
+    NvimTreeRootFolder = { fg = palette.grey },
+    NvimTreeFolderName = { fg = palette.white },
+    NvimTreeSpecialFile = { fg = palette.white },
+    NvimTreeWinSeparator = { fg = palette.base3, bg = nil },
 
     -- nvim-tree git status colors
     NvimTreeGitDirtyIcon = { fg = palette.orange },

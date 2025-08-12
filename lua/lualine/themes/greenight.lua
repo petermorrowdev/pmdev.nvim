@@ -1,7 +1,4 @@
-local palettes = require 'nana.palette'
-
-local current_background = vim.o.background or 'dark'
-local colors = (current_background == 'light') and palettes.light or palettes.dark
+local colors = require 'greenight.palette'
 
 return {
   inactive = {
