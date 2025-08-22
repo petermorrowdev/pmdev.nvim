@@ -44,6 +44,9 @@ local servers = {
   },
   ts_ls = {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+    init_options = {
+      useAliasesForRenames = false,
+    },
   },
   volar = {
     filetypes = { 'vue' },
@@ -82,6 +85,7 @@ return {
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
+    require('neoconf').setup()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('pmdev-lsp-attach', { clear = true }),
       callback = function(event)
