@@ -11,6 +11,7 @@ return {
       vue = { 'prettierd' },
       typescript = { 'prettierd' },
       typescriptreact = { 'prettierd' },
+      python = { 'ruff_fix', 'ruff_format' },
     },
   },
 }
