@@ -4,6 +4,7 @@ local ensure_installed = {
   'lua-language-server',
   'pyright',
   'ruff',
+  'rust-analyzer',
   'stylua',
   'tailwindcss-language-server',
   'terraform-ls',
@@ -66,6 +67,18 @@ local servers = {
           callSnippet = 'Replace',
         },
         diagnostics = { disable = { 'missing-fields' } },
+      },
+    },
+  },
+
+  -- rust
+  rust_analyzer = {
+    settings = {
+      ['rust-analyzer'] = {
+        cargo = {
+          allFeatures = true,
+        },
+        checkOnSave = true,
       },
     },
   },
