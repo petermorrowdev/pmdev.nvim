@@ -1,4 +1,5 @@
 local ensure_installed = {
+  'codebook',
   'css-lsp',
   'eslint-lsp',
   'lua-language-server',
@@ -49,7 +50,7 @@ local servers = {
       useAliasesForRenames = false,
     },
   },
-  volar = {
+  vue_ls = {
     filetypes = { 'vue' },
     init_options = {
       vue = {
@@ -86,6 +87,12 @@ local servers = {
   -- infra
   terraformls = {},
   yamlls = {},
+
+  codebook = {
+    cmd = { 'codebook-lsp', 'serve' },
+
+    filetypes = { 'markdown', 'text', 'gitcommit', 'lua', 'python', 'javascript', 'typescript' },
+  },
 }
 
 return {
@@ -144,12 +151,11 @@ return {
       ensure_installed = ensure_installed,
     }
 
-    -- Configure vue and typescript servers manually
-    local lspconfig = require 'lspconfig'
-
     for server_name, config in pairs(servers) do
       config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
-      lspconfig[server_name].setup(config)
+
+      vim.lsp.config(server_name, config)
+      vim.lsp.enable(server_name)
     end
   end,
 }
