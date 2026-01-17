@@ -10,9 +10,12 @@ return {
       topdelete = { text = '‾' },
       changedelete = { text = '~' },
     },
+    current_line_blame = true,
     on_attach = function(bufnr)
-      vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
       local gs = package.loaded.gitsigns
+      vim.keymap.set('n', '<leader>hD', function()
+        gs.blame_line { full = true }
+      end, { buffer = bufnr, desc = 'Blame line full' })
       vim.keymap.set({ 'n', 'v' }, ']c', function()
         if vim.wo.diff then
           return ']c'

@@ -18,8 +18,8 @@ return {
   yellow = '#ddd86c',
   orange = '#fca746',
   red = '#fc643f',
-  diff_add = '#3d5213',
+  diff_add = '#7cf748',
   diff_remove = '#f74b20',
-  diff_change = '#c4982b',
-  diff_text = '#23324d',
+  diff_change = '#ffd23d',
+  diff_text = '#8db5fc',
 }
