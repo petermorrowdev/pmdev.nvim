@@ -13,7 +13,7 @@ return {
     current_line_blame = true,
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
-      vim.keymap.set('n', '<leader>hD', function()
+      vim.keymap.set('n', '<leader>b', function()
         gs.blame_line { full = true }
       end, { buffer = bufnr, desc = 'Blame line full' })
       vim.keymap.set({ 'n', 'v' }, ']c', function()
