@@ -11,7 +11,17 @@ return {
       vue = { 'prettierd' },
       typescript = { 'prettierd' },
       typescriptreact = { 'prettierd' },
-      python = { 'ruff_fix', 'ruff_format' },
+      python = { 'ruff_format' },
     },
   },
+  config = function(_, opts)
+    require('conform').setup(opts)
+
+    vim.keymap.set('n', '<leader>l', function()
+      require('conform').format({
+        formatters = { 'ruff_fix' },
+        timeout_ms = 500,
+      })
+    end, { desc = '[L]int fix with ruff' })
+  end,
 }
