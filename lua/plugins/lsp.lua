@@ -80,6 +80,9 @@ local servers = {
           allFeatures = true,
         },
         checkOnSave = true,
+        diagnostics = {
+          disabled = { 'private-assoc-item' },
+        },
       },
     },
   },
