@@ -179,6 +179,7 @@ return function(palette)
     ['@tag.delimiter'] = { fg = palette.white },
     ['@text'] = { fg = palette.white },
     ['@type'] = { fg = palette.green },
+    ['@lsp.type.enumMember'] = { fg = palette.green },
     ['@type.builtin'] = { fg = palette.blue },
     ['@type.qualifier'] = { fg = palette.crimson },
     ['@variable'] = { fg = palette.white },
