@@ -91,6 +91,9 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set('n', '<leader>x', '<cmd>bdelete<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>X', '<cmd>silent! %bd<bar>e#<bar>bd#<bar>normal! \'"<CR>', { desc = 'Close other buffers' })
+
 -- Make line numbers default
 vim.wo.number = true
 vim.wo.colorcolumn = '80,88,120'
