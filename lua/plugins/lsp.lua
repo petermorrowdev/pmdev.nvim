@@ -6,12 +6,9 @@ local ensure_installed = {
   'pyright',
   'ruff',
   'rust-analyzer',
-  'stylua',
   'tailwindcss-language-server',
-  'terraform-ls',
   'typescript-language-server',
   'vue-language-server',
-  'yaml-language-server',
 }
 
 local servers = {
@@ -88,9 +85,6 @@ local servers = {
   },
 
   -- infra
-  terraformls = {},
-  yamlls = {},
-
   codebook = {
     cmd = { 'codebook-lsp', 'serve' },
 
