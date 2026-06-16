@@ -12,6 +12,7 @@ return { -- Highlight, edit, and navigate code
         'dockerfile',
         'hcl',
         'html',
+        'javascript',
         'json',
         'lua',
         'markdown',
@@ -19,16 +20,26 @@ return { -- Highlight, edit, and navigate code
         'python',
         'sql',
         'toml',
+        'tsx',
+        'typescript',
         'vim',
         'vimdoc',
       }
 
       require('nvim-treesitter').install(parsers)
 
+      local parser_set = {}
+      for _, v in ipairs(parsers) do
+        parser_set[v] = true
+      end
+
       vim.api.nvim_create_autocmd('FileType', {
-        pattern = parsers,
-        callback = function()
-          vim.treesitter.start()
+        callback = function(args)
+          -- if no mapping then return the filetype
+          local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+          if lang and parser_set[lang] then
+            vim.treesitter.start(args.buf)
+          end
         end,
       })
     end,
