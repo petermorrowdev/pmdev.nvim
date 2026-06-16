@@ -64,7 +64,7 @@ local servers = {
         completion = {
           callSnippet = 'Replace',
         },
-        diagnostics = { disable = { 'missing-fields' } },
+        diagnostics = {},
       },
     },
   },
@@ -99,7 +99,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
-    { 'folke/neodev.nvim', opts = {} },
+    { 'folke/lazydev.nvim', ft = 'lua', opts = { library = { { path = 'lazy.nvim', words = { 'Lazy' } } } } },
   },
   config = function()
     require('neoconf').setup()
