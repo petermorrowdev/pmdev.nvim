@@ -1,11 +1,13 @@
 local ensure_installed = {
   'codebook',
   'css-lsp',
+  'eslint_d',
   'eslint-lsp',
   'lua-language-server',
   'pyright',
   'ruff',
   'rust-analyzer',
+  'svelte-language-server',
   'tailwindcss-language-server',
   'typescript-language-server',
   'vue-language-server',
@@ -55,6 +57,7 @@ local servers = {
       },
     },
   },
+  svelte = {},
   cssls = {},
 
   -- nvim

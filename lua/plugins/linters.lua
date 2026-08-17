@@ -4,6 +4,7 @@ return {
     local lint = require 'lint'
     lint.linters_by_ft = {
       python = { 'mypy' },
+      svelte = { 'eslint_d' },
     }
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePre', 'BufWritePost', 'TextChanged', 'InsertLeave' }, {
       callback = function()

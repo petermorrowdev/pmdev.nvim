@@ -9,6 +9,7 @@ return { -- Highlight, edit, and navigate code
       local parsers = {
         'bash',
         'c',
+        'css',
         'dockerfile',
         'hcl',
         'html',
@@ -19,6 +20,7 @@ return { -- Highlight, edit, and navigate code
         'markdown_inline',
         'python',
         'rust',
+        'svelte',
         'sql',
         'toml',
         'tsx',
