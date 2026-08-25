@@ -1,8 +1,6 @@
 local ensure_installed = {
   'codebook',
   'css-lsp',
-  'eslint_d',
-  'eslint-lsp',
   'lua-language-server',
   'pyright',
   'ruff',
@@ -31,7 +29,7 @@ local servers = {
   ruff = {},
 
   -- web
-  eslint = {},
+  oxlint = {},
   tailwindcss = {
     settings = {
       tailwindCSS = {
