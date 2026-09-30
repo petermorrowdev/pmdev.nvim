@@ -2,6 +2,7 @@ local ensure_installed = {
   'codebook',
   'css-lsp',
   'lua-language-server',
+  'marksman',
   'pyright',
   'ruff',
   'rust-analyzer',
@@ -12,6 +13,9 @@ local ensure_installed = {
 }
 
 local servers = {
+  -- markdown
+  marksman = {},
+
   -- python
   pyright = {
     settings = {
