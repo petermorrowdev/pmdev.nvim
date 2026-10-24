@@ -27,6 +27,7 @@ return { -- Highlight, edit, and navigate code
         'typescript',
         'vim',
         'vimdoc',
+        'vue',
       }
 
       require('nvim-treesitter').install(parsers)

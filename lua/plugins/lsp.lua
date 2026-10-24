@@ -49,15 +49,18 @@ local servers = {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
     init_options = {
       useAliasesForRenames = false,
+      plugins = {
+        {
+          name = '@vue/typescript-plugin',
+          location = vim.fn.stdpath('data') .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+          languages = { 'vue' },
+          configNamespace = 'typescript',
+        },
+      },
     },
   },
   vue_ls = {
     filetypes = { 'vue' },
-    init_options = {
-      vue = {
-        hybridMode = false,
-      },
-    },
   },
   svelte = {},
   cssls = {},
@@ -108,6 +111,7 @@ return {
   },
   config = function()
     require('neoconf').setup()
+    local reference_group = vim.api.nvim_create_augroup('pmdev-lsp-references', { clear = true })
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('pmdev-lsp-attach', { clear = true }),
       callback = function(event)
@@ -127,12 +131,15 @@ return {
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
+          vim.api.nvim_clear_autocmds { group = reference_group, buffer = event.buf }
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            group = reference_group,
             buffer = event.buf,
             callback = vim.lsp.buf.document_highlight,
           })
 
           vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            group = reference_group,
             buffer = event.buf,
             callback = vim.lsp.buf.clear_references,
           })
